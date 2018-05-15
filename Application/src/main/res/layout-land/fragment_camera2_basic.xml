@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright 2014 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.android.camera2basic.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <FrameLayout
+        android:id="@+id/control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/texture"
+        android:background="@color/control_background"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/picture" />
+
+
+    </FrameLayout>
+    <EditText
+        android:id="@+id/isoText"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/isoSeekBar"
+        android:layout_marginEnd="28dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:nextFocusDown="@+id/shutterText"
+        android:text="200"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <SeekBar
+        android:id="@+id/isoSeekBar"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="109dp"
+        android:layout_marginTop="54dp"
+        android:max="100"
+        android:progressBackgroundTint="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/shutterText"
+        android:nextFocusDown="@+id/isoText"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/isoText"
+        android:layout_marginTop="86dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:text="60"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <SeekBar
+        android:id="@+id/shutterSeekBar"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shutterText"
+        android:layout_alignStart="@+id/isoSeekBar"
+        android:max="100"
+        android:progressBackgroundTint="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
+        android:layout_alignBottom="@+id/isoText"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:layout_toLeftOf="@id/isoSeekBar"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="ISO"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
+        android:layout_alignBottom="@id/shutterText"
+        android:layout_toLeftOf="@id/shutterSeekBar"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Shutter"
+        android:textColor="@android:color/holo_red_dark" />
+
+</RelativeLayout>
